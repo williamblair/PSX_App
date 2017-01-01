@@ -39,10 +39,14 @@ so beware.
 
 OTHER PS1 STUFF:
 ---------------------------
-https://github.com/simias/psxsdk - the github for psxsdk, an open source PS1 development library
+An alternative to PSYQ is psxsdk, which is an open source PS1 development library
+It comes with a commnd line disc creation utility that I use along with PSYQ
+
+https://github.com/simias/psxsdk - the github for psxsdk
+
 http://unhaut.x10host.com/psxsdk/ - website for above SDK
+
 https://code.google.com/archive/p/psxsdk/downloads - you can find a windows 32 bit version of ps2sdk here (...win32-inst.exe)
-psxsdk comes with a command line disc creation utility that I use along with PSYQ for creating disc images
 
 http://www.psxdev.net/forum/viewforum.php?f=64 - examples using PSYQ
 
