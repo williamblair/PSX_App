@@ -5,12 +5,12 @@ ABOUT
 --------
 PSYQ is the official SONY development kit for the Playstation 1; it's available at:
 	
-	<a href="http://www.psxdev.net/downloads.html">http://www.psxdev.net/downloads.html</a>
+	http://www.psxdev.net/downloads.html
 	
 Most of the code here is adapted from PSXDEV's hello world tutorial, and also Orion's PSX Library: 
 
-	<a href="http://www.psxdev.net/help/psyq_hello_world.html">http://www.psxdev.net/help/psyq_hello_world.html</a>
-	<a href="http://onorisoft.free.fr/retro.htm">http://onorisoft.free.fr/retro.htm</a>
+	http://www.psxdev.net/help/psyq_hello_world.html
+	http://onorisoft.free.fr/retro.htm<
 	
 PSYQ also comes with the developer's guide and reference manuals for the SDK, which are stored as PDFs in the DOCS folder of psyq.
 
