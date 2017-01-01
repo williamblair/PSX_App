@@ -11,14 +11,17 @@ void PSX_App::init(const u_int w, const u_int h)
     bgcolor[1] = 50; // g
     bgcolor[2] = 50; // b
 
-	if (*(char *)0xbfc7ff52=='E') SetVideoMode(1); else SetVideoMode(0); // within the BIOS, if the address 0xBFC7FF52 equals 'E', set it as PAL (1). Otherwise, set it as NTSC (0)
+    if (*(char *)0xbfc7ff52=='E') 
+        SetVideoMode(MODE_PAL);
+    else 
+        SetVideoMode(MODE_NTSC); // within the BIOS, if the address 0xBFC7FF52 equals 'E', set it as PAL (1). Otherwise, set it as NTSC (0)
 
-	/* interlacing must be off if the resolution is 640,480
-	 * it also means that we don't have room to double buffer */
-	if( h == 480 ) {
+    /* interlacing must be off if the resolution is 640,480
+     * it also means that we don't have room to double buffer */
+    if( h == 480 ) {
         GsInitGraph(screen_width, screen_height, GsNONINTER|GsOFSGPU, 1, 0); // set the graphics mode resolutions. You may also try using 'GsNONINTER' (read LIBOVR46.PDF in PSYQ/DOCS for detailed information)
         GsDefDispBuff(0, 0, 0, 0); // set the top left coordinates of the two buffers in video memory
-	}
+    }
     else {
         GsInitGraph(w, h, GsINTER|GsOFSGPU, 1, 0); // set the graphics mode resolutions. You may also try using 'GsNONINTER' (read LIBOVR46.PDF in PSYQ/DOCS for detailed information)
         GsDefDispBuff(0, 0, 0, h); // set the top left coordinates of the two buffers in video memory
@@ -48,12 +51,9 @@ void PSX_App::drawFrame(void)
 	GsSortClear(bgcolor[0],
                 bgcolor[1],
                 bgcolor[2],
-                &myOT[CurrentBuffer]); // clear the ordering table with a background color. RGB value 50,50,50 which is a grey background (0,0,0 would be black for example)
+                &myOT[CurrentBuffer]); // clear the ordering table with a background color.
 
 	GsDrawOt(&myOT[CurrentBuffer]); // Draw the ordering table for the CurrentBuffer
-
-	/* reset ordering for next frame */
-	//prio = (1 << OT_LENGTH) - 1; // start at the end of order table
 
     return;
 }
