@@ -55,3 +55,22 @@ void PSX_App::drawRect(const int topLeftX, const int topLeftY,
 
     return;
 }
+
+void PSX_App::drawTriangle(const int bottomLeftX,  const int bottomLeftY,
+                           const int middleX,      const int middleY,
+						   const int bottomRightX, const int bottomRightY,
+						   const int r, const int g, const int b)
+{
+	POLY_F3 tri;
+	SetPolyF3(&tri);
+	setXY3(&tri, bottomLeftX,  bottomLeftY,
+	             middleX,      middleY,
+				 bottomRightX, bottomRightY );
+				 
+	setRGB0(&tri, r, g, b);
+
+	DrawPrim(&tri);
+	
+	return;
+}
+

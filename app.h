@@ -35,6 +35,11 @@ class PSX_App
         void drawRect(const int topLeftX, const int topLeftY,
                       const int bottomRightX, const int bottomRightY,
                       const int r, const int g, const int b);
+					  
+		void drawTriangle(const int bottomLeftX,  const int bottomLeftY,
+                          const int middleX,      const int middleY,
+						  const int bottomRightX, const int bottomRightY,
+                          const int r, const int g, const int b);
 
         //void draw();          // where you actually draw stuff to the screen
         void drawFrame(void); // process a frame

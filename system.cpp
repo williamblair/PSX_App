@@ -35,6 +35,11 @@ void PSX_App::init(const u_int w, const u_int h)
 
 	GsClearOt(0,0,&myOT[0]);
 	GsClearOt(0,0,&myOT[1]);
+	
+	/* load the bios font */
+	FntLoad(960, 256); // load bios font
+    SetDumpFnt(FntOpen(5, 20, 320, 240, 0, 512)); //x,y, max length x,y,
+                                                 // auto bg clear, max chars
 
 	return;
 }
