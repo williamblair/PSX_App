@@ -7,6 +7,11 @@
 
 int main(void)
 {
+	int rectX = 400; // test controller to move rect
+	int rectY = 200;
+	int rectWidth = 200;
+	int rectHeight = 200;
+
 	/* create an instance of the app */
 	PSX_App app;
 	
@@ -33,6 +38,30 @@ int main(void)
 	{
 		/* use the bios font to print to the screen */
 		FntPrint("Hello World!\n");
+
+		/* read pad data */
+		pad1.read();
+
+		/* test and move rect accordingly 
+		 * buttons are defined in pad.h */
+		if( pad1.checkHeld( PadLeft )){
+			rectX--;
+		}
+		if( pad1.checkHeld( PadRight )){
+			rectX++;
+		}
+		if( pad1.checkHeld( PadUp )){
+			rectY--;
+		}
+		if( pad1.checkHeld( PadDown )){
+			rectY++;
+		}
+
+		if( pad1.checkPressed( PadCross )){
+			FntPrint("Clicked X!");
+			printf("Clicked X!\n");
+		}
+
 		
 		/* args - x0, y0, x1, y1, r,g,b */
 		app.drawLine(100, 400, 200, 200,
@@ -49,7 +78,7 @@ int main(void)
 		/* draw a blue rectangle 
 		 * args - top left x, top left y, bottom right x, bottom right y,
 		 *        r,g,b  */
-		app.drawRect(400, 200, 600, 400,
+		app.drawRect(rectX, rectY, rectX + rectWidth, rectY + rectHeight,
 		         0, 0, 255);
 
 		/* draw a green triangle

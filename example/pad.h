@@ -38,7 +38,8 @@ class PSX_Pad
 
 		void read(void); // read pad data
 
-		bool checkPressed(u_int button); // returns true if sent button is held down
+		bool checkHeld(    u_int button ); // returns true if sent button is clicked
+		bool checkPressed( u_int button ); // returns true if sent button is held down
 	private:
 	
 		int port; // is it controller 1 or 2?

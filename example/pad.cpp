@@ -28,9 +28,14 @@ void PSX_Pad::read(void)
 	SysPad  = padInfo;
 }
 
-bool PSX_Pad::checkPressed(u_int button)
+bool PSX_Pad::checkHeld(u_int button)
 {
 	return (SysPad & _PAD(port, button));
+}
+
+bool PSX_Pad::checkPressed(u_int button)
+{
+	return (SysPadT & _PAD(port, button));
 }
 
 
