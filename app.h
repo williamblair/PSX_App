@@ -1,3 +1,4 @@
+/* app.h - class declaration of PSX_App */
 
 #include <stdlib.h>
 #include <libgte.h>
@@ -19,13 +20,10 @@ class PSX_App
         PSX_App(); // constructor
 
         void init(const u_int w, const u_int h); // initialize the system
-        void run(void);                      // run the main loop
 
         void setBgColor(u_char r, u_char g, u_char b); // set bg clear color
-
-    protected:
-
-        void drawPixel(const int x, const int y,
+		
+		void drawPixel(const int x, const int y,
                        const int r, const int g, const int b);
 
         void drawLine(const int x0, const int y0,
