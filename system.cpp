@@ -11,6 +11,9 @@ void PSX_App::init(const u_int w, const u_int h)
     bgcolor[1] = 50; // g
     bgcolor[2] = 50; // b
 
+	/* initialize the controller */
+	PadInit(0);
+
     if (*(char *)0xbfc7ff52=='E') 
         SetVideoMode(MODE_PAL);
     else 
