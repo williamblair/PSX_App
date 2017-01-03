@@ -1,0 +1,5 @@
+This is an example project using PSX_App. All of your main coding will be in the while(1) loop
+of app.cpp.
+
+Compile the project by running comp.bat in a CMD window,
+and you can clean the project by running clean.bat
