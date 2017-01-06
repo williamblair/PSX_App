@@ -1,7 +1,7 @@
 
 #include "3D.h"
 
-PSX_3DPlane::PSX_3DPlane()
+PSX_3DQuad::PSX_3DQuad()
 {
 	/* initialize the primitive */
 	SetPolyG4(&plane);
@@ -35,7 +35,7 @@ PSX_3DPlane::PSX_3DPlane()
 	flg = 0;
 }
 
-PSX_3DPlane::PSX_3DPlane(u_int x1, u_int y1, u_int z1, // the coordinates for each point
+PSX_3DQuad::PSX_3DQuad(u_int x1, u_int y1, u_int z1, // the coordinates for each point
                          u_int x2, u_int y2, u_int z2,
                          u_int x3, u_int y3, u_int z3,
                          u_int x4, u_int y4, u_int z4, 
@@ -69,7 +69,7 @@ PSX_3DPlane::PSX_3DPlane(u_int x1, u_int y1, u_int z1, // the coordinates for ea
 	ang.vz = 0;
 }
 
-void PSX_3DPlane::rotate(short x, short y, short z)
+void PSX_3DQuad::rotate(short x, short y, short z)
 {
 	/* apply the angles 
 	 * example rotates 32 units at a time */
@@ -85,7 +85,7 @@ void PSX_3DPlane::rotate(short x, short y, short z)
 	return;
 }
 
-void PSX_3DPlane::draw(void)
+void PSX_3DQuad::draw(void)
 {
 	/* translate vector */
 	VECTOR vec = {0, 0, SCR_Z};
@@ -118,15 +118,15 @@ void PSX_3DPlane::draw(void)
 }
 
 /* getter functions */
-short PSX_3DPlane::getAngX(void){
+short PSX_3DQuad::getAngX(void){
 	return ang.vx;
 }
 
-short PSX_3DPlane::getAngY(void){
+short PSX_3DQuad::getAngY(void){
 	return ang.vy;
 }
 
-short PSX_3DPlane::getAngZ(void){
+short PSX_3DQuad::getAngZ(void){
 	return ang.vz;
 }
 

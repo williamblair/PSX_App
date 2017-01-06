@@ -5,12 +5,12 @@
 
 #define SCR_Z	1024		/* distance to screen*/
 
-class PSX_3DPlane
+class PSX_3DQuad
 {
 	public:
 	
-		PSX_3DPlane(); // constructor
-		PSX_3DPlane(u_int x1, u_int y1, u_int z1, // the coordinates for each point
+		PSX_3DQuad(); // constructor
+		PSX_3DQuad(u_int x1, u_int y1, u_int z1, // the coordinates for each point
 		            u_int x2, u_int y2, u_int z2,
 		            u_int x3, u_int y3, u_int z3,
 		            u_int x4, u_int y4, u_int z4, 
