@@ -24,7 +24,8 @@ class PSX_3DQuad : public PSX_3DShape
 	//private:
 	
 		POLY_G4 plane;          // the primitive to draw
-		u_int   color[4][3];    // colors of each point
+		//u_int   color[4][3];    // colors of each point
+		VECTOR color[4];          // colors of each point
 };
 
 #endif

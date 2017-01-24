@@ -20,16 +20,16 @@ PSX_3DQuad::PSX_3DQuad()
 	 * defaults to white */
 	for(int i=0; i<4; i++)
 	{
-		color[i][0] = 255;
-		color[i][1] = 255;
-		color[i][2] = 255;
+		color[i].vx = 255;
+		color[i].vx = 255;
+		color[i].vx = 255;
 	}
 	
 	/* apply the array to the actual coloring */
-	setRGB0(&plane, color[0][0], color[0][1], color[0][2]);
-	setRGB1(&plane, color[1][0], color[1][1], color[1][2]);
-	setRGB2(&plane, color[2][0], color[2][1], color[2][2]);
-	setRGB3(&plane, color[3][0], color[3][1], color[3][2]);
+	setRGB0(&plane, color[0].vx, color[0].vy, color[0].vz);
+	setRGB1(&plane, color[1].vx, color[1].vy, color[1].vz);
+	setRGB2(&plane, color[2].vx, color[2].vy, color[2].vz);
+	setRGB3(&plane, color[3].vx, color[3].vy, color[3].vz);
 	
 	/* set the default angle */
 	ang.vx = 0;
@@ -64,16 +64,16 @@ PSX_3DQuad::PSX_3DQuad(u_int x1, u_int y1, u_int z1, // the coordinates for each
 	setVector(&pos[2], x3, y3, z3); setVector(&pos[3], x4, y4, z4);
 	
 	/* initialize its colors array */
-	color[0][0] = r1; color[0][1] = g1; color[0][2] = b1;
-	color[1][0] = r2; color[1][1] = g2; color[1][2] = b2;
-	color[2][0] = r3; color[2][1] = g3; color[2][2] = b3;
-	color[3][0] = r4; color[3][1] = g4; color[3][2] = b4;
+	color[0].vx = r1; color[0].vy = g1; color[0].vz = b1;
+	color[1].vx = r2; color[1].vy = g2; color[1].vz = b2;
+	color[2].vx = r3; color[2].vy = g3; color[2].vz = b3;
+	color[3].vx = r4; color[3].vy = g4; color[3].vz = b4;
 	
 	/* apply the array to the actual coloring */
-	setRGB0(&plane, color[0][0], color[0][1], color[0][2]);
-	setRGB1(&plane, color[1][0], color[1][1], color[1][2]);
-	setRGB2(&plane, color[2][0], color[2][1], color[2][2]);
-	setRGB3(&plane, color[3][0], color[3][1], color[3][2]);
+	setRGB0(&plane, color[0].vx, color[0].vy, color[0].vz);
+	setRGB1(&plane, color[1].vx, color[1].vy, color[1].vz);
+	setRGB2(&plane, color[2].vx, color[2].vy, color[2].vz);
+	setRGB3(&plane, color[3].vx, color[3].vy, color[3].vz);
 	
 	/* initialize the angle */
 	ang.vx = 0;
