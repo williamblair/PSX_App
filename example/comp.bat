@@ -1,7 +1,7 @@
 ::Example file for compilation of the project
 
-:: the psyq make utility
-psymake
+:: compile the exe
+ccpsx -O3 -Xo$80010000 *.cpp -omain.cpe,main.sym,mem.map
 pause
 
 :: converts the generated cpe file to a PSX EXE file, which can be run by an emulator
